@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 226 71% 4%; /* #030712 */
+    --foreground: 0 0% 100%; /* #FFFFFF */
+    
+    --card: 0 0% 100%; /* base */
+    --card-foreground: 0 0% 100%;
+    
+    --popover: 226 71% 4%;
+    --popover-foreground: 0 0% 100%;
+    
+    --primary: 217 91% 60%; /* #3B82F6 */
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 189 94% 43%; /* #06B6D4 */
+    --secondary-foreground: 0 0% 100%;
+    
+    --accent: 258 90% 66%; /* #8B5CF6 */
+    --accent-foreground: 0 0% 100%;
+    
+    --muted: 215 14% 65%; /* #9CA3AF */
+    --muted-foreground: 215 14% 65%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 100%; 
+    --input: 215 28% 17%;
+    --ring: 217 91% 60%;
+    
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 226 71% 4%; /* #030712 */
+    --foreground: 0 0% 100%; /* #FFFFFF */
+    
+    --card: 0 0% 100%; 
+    --card-foreground: 0 0% 100%;
+    
+    --popover: 226 71% 4%;
+    --popover-foreground: 0 0% 100%;
+    
+    --primary: 217 91% 60%; /* #3B82F6 */
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 189 94% 43%; /* #06B6D4 */
+    --secondary-foreground: 0 0% 100%;
+    
+    --accent: 258 90% 66%; /* #8B5CF6 */
+    --accent-foreground: 0 0% 100%;
+    
+    --muted: 215 14% 65%; /* #9CA3AF */
+    --muted-foreground: 215 14% 65%;
+    
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 100%; 
+    --input: 215 28% 17%;
+    --ring: 217 91% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-white/10;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+    background-color: #030712;
+    overflow-x: hidden;
+  }
+  
+  /* Lenis Smooth Scroll */
+  html.lenis, html.lenis body {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+  .lenis.lenis-smooth iframe {
+    pointer-events: none;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-white/[0.03] backdrop-blur-md border border-white/[0.08] rounded-2xl shadow-[0_8px_32px_0_rgba(0,0,0,0.37)];
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-accent to-secondary;
+  }
+  
+  .hover-tilt {
+    @apply transition-transform duration-300 ease-out hover:scale-105;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #030712;
+}
+::-webkit-scrollbar-thumb {
+  background: #1f2937;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #374151;
+}
+
+/* Base structural fixes */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
