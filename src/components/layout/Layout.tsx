@@ -30,7 +30,7 @@ export function Layout() {
   }, []);
 
   return (
-    <div className="relative min-h-screen flex flex-col selection:bg-primary/30 selection:text-primary-foreground">
+    <div className="relative min-h-screen flex flex-col selection:bg-primary/30 selection:text-primary-foreground overflow-x-hidden w-full">
       <CustomCursor />
       <Navbar />
       <main className="flex-1">
